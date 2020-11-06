@@ -8,6 +8,12 @@ const PORT = process.env.PORT || 3000;
 
 const memstorage = [];
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.get("/", (req, res) => {
   res.send(`<html><head></head><body><h1>Codestar iot-api</h1>
 For more info go to <a href="https://github.com/mdvanes/iot-api">https://github.com/mdvanes/iot-api</a>
