@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const app = express();
 const jsonParser = bodyParser.json();
 
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
 const memstorage = [];
 
@@ -29,6 +29,6 @@ app.post("/set", jsonParser, (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`IoT API listening at http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`IoT API listening at http://localhost:${PORT}`);
 });
