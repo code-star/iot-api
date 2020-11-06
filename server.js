@@ -1,12 +1,18 @@
 // Run with `yarn start`, it will start `node index.js`
 const express = require("express");
-const bodyParser = require('body-parser')
+const bodyParser = require("body-parser");
 const app = express();
 const jsonParser = bodyParser.json();
 
 const port = 3000;
 
 const memstorage = [];
+
+app.get("/", (req, res) => {
+  res.send(`<html><head></head><body><h1>Codestar iot-api</h1>
+For more info go to <a href="https://github.com/mdvanes/iot-api">https://github.com/mdvanes/iot-api</a>
+</body></html>`);
+});
 
 app.get("/get", (req, res) => {
   res.send(memstorage);
