@@ -1,12 +1,13 @@
 // Run with `yarn start`, it will start `node index.js`
-const express = require("express");
-const bodyParser = require("body-parser");
+import express from "express";
+import bodyParser from "body-parser";
+
 const app = express();
 const jsonParser = bodyParser.json();
 
 const PORT = process.env.PORT || 3000;
 
-const memstorage = [];
+const memstorage: any[] = [];
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
